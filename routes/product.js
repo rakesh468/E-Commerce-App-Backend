@@ -21,7 +21,7 @@ router.post("/",validate(validator),asyncHandler(async(request,response)=>{
 //Get product by Id using GET method//
 router.get("/:id",[isValidObjectId,validate(validator)],
 asyncHandler(async(request,response)=>{
-   const product= await Product.findById(request.params.id)
+   const product= await Product.findById({_id:request.params.id})
    response.send(product);
 }))
 
