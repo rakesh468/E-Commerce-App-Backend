@@ -34,7 +34,7 @@ const validator=(data)=>{
         imageUrl:joi.string().required(),
         description:joi.string().required(),
         price:joi.string().required(),
-        countInStock:joi.string().required()
+      
      })
      return schema.validate(data)
 }
