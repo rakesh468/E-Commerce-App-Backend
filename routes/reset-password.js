@@ -12,7 +12,6 @@ router.post("/resetpassword", async (request, response) => {
     const schema = Joi.object({ email: Joi.string().email().required() });
     const { error } = schema.validate(request.body);
     if (error) response.status(400).send(error);
-
     const user = await User.findOne({ email: request.body.email });
     if (!user) response.status(400).send({ message: "User is not exist" });
     let token = await Token.findOne({ userId: user._id });
