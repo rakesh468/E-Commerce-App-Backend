@@ -26,7 +26,7 @@ router.post("/resetpassword", async (request, response) => {
     response.send({ message: "Password Reset link sent to your email" });
   } catch (error) {
     response.send(error);
-    console.log(error)
+   
   }
 });
 
