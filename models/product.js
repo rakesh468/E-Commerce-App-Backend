@@ -19,10 +19,7 @@ const ProductSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    countInStock:{
-        type:String,
-        required:true
-    }
+   
 
 })
 
@@ -34,7 +31,7 @@ const validator=(data)=>{
         imageUrl:joi.string().required(),
         description:joi.string().required(),
         price:joi.string().required(),
-      
+        
      })
      return schema.validate(data)
 }
